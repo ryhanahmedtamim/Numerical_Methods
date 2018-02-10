@@ -44,6 +44,20 @@ public class Main {
 			}
 			else if(xx == 2)
 			{
+				print("Enter The value of x0 : ");
+				double c = sc.nextDouble();
+				Function2  f = new Function2();
+				
+				print("Enter the value of Maxmum iteration :");
+				int it = sc.nextInt();
+				print("Enter the True value :");
+				double tr = sc.nextDouble();
+				print("Enter the value maximum error:");
+				double es = sc.nextDouble();
+				
+				FixedPointIteration fx = new FixedPointIteration(c,es,it,f,tr);
+				
+				fx.getRoot();
 				
 				
 			}

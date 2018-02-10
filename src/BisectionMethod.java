@@ -5,6 +5,7 @@ public class BisectionMethod {
 	private int imax;
 	private double es;
 	double x = 14.7802;
+	double ea = 93820948;
 	//private ArrayList<Double> x = new ArrayList<Double>();
 	Function1 f1;
 	
@@ -31,7 +32,7 @@ public class BisectionMethod {
 			xr = (xl+xu)/2;
 			
 			double et = Math.abs(x-xr)/x;
-			double ea = 0;
+			
 			et*=100;
 			print("    "+i+" ");
 			
