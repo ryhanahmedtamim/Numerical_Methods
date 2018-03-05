@@ -27,10 +27,7 @@ public class FixedPointIteration {
 		print("          ");
 		printf(x0);		
 		print("                   ");
-		double et = (Math.abs(x0-ans))/ans;
 		
-		et*=100;
-		printf(et);
 		print("\n");
 
 		
@@ -42,9 +39,7 @@ public class FixedPointIteration {
 			
 			
 			
-			 et = (Math.abs(x0-ans))/ans;
 			
-			et*=100;
 
 			
 			print("    "+(i+1)+" ");
@@ -62,15 +57,11 @@ public class FixedPointIteration {
 			
 			
 			
-				ea = (Math.abs(tempxr-x0))/x0;
+				ea = Math.abs((tempxr-x0)/x0);
 				ea*=100;
 				print("      ");
 				printf(ea);
-				print("        ");
-			
-			
-			
-			printf(et);
+
 			
 			if(ea<=es)
 			{

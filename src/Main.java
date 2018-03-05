@@ -4,7 +4,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		print("For Roots of Equation : 1\n");
-		print("For Differention : 2\n");
+		print("For System of Linear Equations : 2\n");
 		print("For Integration : 3\n");
 		
 		
@@ -56,10 +56,8 @@ public class Main {
 				double es = sc.nextDouble();
 				
 				FixedPointIteration fx = new FixedPointIteration(c,es,it,f,tr);
-				
-				fx.getRoot();
-				
-				
+
+				fx.getRoot();	
 			}
 			else
 			{
@@ -67,13 +65,15 @@ public class Main {
 			}
 			
 		}
-		else 
+		else if(x == 2)
 		{
+			int n = sc.nextInt();
+			LinearSystem ls = new LinearSystem(n);
 			
-		}
-		
-		
-		
+			NaiveGausssElimination nvg = new NaiveGausssElimination(ls);
+			
+			nvg.getSolution();
+		}	
 		
 
 	}

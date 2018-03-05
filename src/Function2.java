@@ -2,11 +2,9 @@
 public class Function2 {
 		
 	
-	public double getValue(double c)
+	public double getValue(double x)
 	{
-		double e = Math.exp(-c);
-		
-		
-		return e;
+		double x1 = Math.exp(x);
+		return x1;
 	}
 }

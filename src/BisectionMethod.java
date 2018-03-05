@@ -91,9 +91,7 @@ public class BisectionMethod {
 	public void printf(Object o)
 	{
 		System.out.printf("%.3f", o);
-	}
-	
-	
+	}	
 	
 	
 }
