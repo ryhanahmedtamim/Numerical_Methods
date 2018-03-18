@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class LinearSystem {
-	private double[][] coEfficient = new double[20][20];
-	private double[] rightSide = new double[20];
+	private double[][] coEfficient = new double[100][100];
+	private double[] rightSide = new double[100];
 	private int n;
 	
 	private static Scanner sc = new Scanner(System.in); 
@@ -9,12 +9,13 @@ public class LinearSystem {
 	public LinearSystem(int n)
 	{
 		this.n = n;
-		while(n>20 || n<=0)
+		while(n>100 || n<=0)
 		{
-			if(n>20)
+			if(n>100)
 			{
-				print("This Program build for maximum 20 linear Equations");
+				print("This Program build for maximum 100 linear Equations");
 				n = sc.nextInt();
+				
 				continue;
 				
 			}
@@ -28,8 +29,10 @@ public class LinearSystem {
 		{
 			for(int j=0; j<n; j++) // j coefficient number and right side
 			{
+				print("Give the Coefficient of X ("+(j+1)+") : of equation No." + (i+1) +":");
 				coEfficient[i][j] = sc.nextDouble();
 			}
+			print("Give the right side of   equation No."+(i+1)+ ":");
 			rightSide[i] = sc.nextDouble();
 		}
 		

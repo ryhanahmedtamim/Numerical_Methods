@@ -3,7 +3,7 @@ public class NaiveGausssElimination {
 	
 	private LinearSystem ls;
 	private int numberOfEquations;
-	private double[] answers = new double[20];
+	private double[] answers = new double[100];
 	
 	public NaiveGausssElimination(LinearSystem ls)
 	{
@@ -39,7 +39,7 @@ public class NaiveGausssElimination {
 		for(int i=numberOfEquations-2; i>=0; i--)
 		{
 			double sum = ls.getRigthSide(i);
-			print(sum);
+			//print(sum);
 			for(int j=i+1; j<numberOfEquations; j++)
 			{
 				sum-=(ls.getCoefficient(i, j)*answers[j]);
@@ -47,11 +47,11 @@ public class NaiveGausssElimination {
 			answers[i] = sum/ls.getCoefficient(i, i);
 		}
 		
-		
+		print("The Roots are :\n");
 		for(int i=0; i<numberOfEquations; i++)
 		{
-			
-			print(answers[i]);
+			print("X"+ (i+1) + " = ");
+			printf(answers[i]);
 			print("\n");
 		}
 		

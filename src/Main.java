@@ -67,12 +67,56 @@ public class Main {
 		}
 		else if(x == 2)
 		{
+			
+			print("Naive Gauss Elemination: 1\n");
+			print("Gauss Seidel : 2\n");
+			print("Gauss Jordan : 3\n");
+			
+			
+			int xxx = sc.nextInt();
+			
+			while(xxx !=1 && xxx !=2 && xxx != 3)
+			{
+				print("Wrong Selections");
+				print("\nPlease give the correct input\n");
+				xxx = sc.nextInt();
+			}
+			
+			if(xxx == 1) 
+			{
+				print("Give the number of equations: ");
 			int n = sc.nextInt();
 			LinearSystem ls = new LinearSystem(n);
 			
 			NaiveGausssElimination nvg = new NaiveGausssElimination(ls);
 			
 			nvg.getSolution();
+			
+			}
+			else if(xxx==2)
+			{
+				print("Give the number of equations: ");
+				int n = sc.nextInt();
+				LinearSystem ls = new LinearSystem(n);
+				print("Give the Maximum Error (%)");
+				double es = sc.nextDouble();
+				GaussSeidel gSeidel = new GaussSeidel(ls, es);
+				print("Give the maximum Iterations");
+				int imax = sc.nextInt();
+				print("\n");
+				gSeidel.getSolution(imax);
+				
+			}
+			else 
+			{
+				print("Give the number of equations: ");
+				int n = sc.nextInt();
+				LinearSystem ls = new LinearSystem(n);
+				
+				GaussJordanElimination gaussJordanElimination = new GaussJordanElimination(ls);
+				
+				gaussJordanElimination.getSolution();
+			}
 		}	
 		
 
