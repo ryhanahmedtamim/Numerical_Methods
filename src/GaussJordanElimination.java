@@ -43,24 +43,14 @@ public class GaussJordanElimination {
 		for(int i = 0; i < numberOfEquations; i++)
 		{
 			double div = ls.getCoefficient(i, i);
-			for(int j = 0; j < numberOfEquations; j++)
-			{
-				
-				if(i==j)
-				{
-					printf(ls.getCoefficient(i,j)/div + " \t\t");
-				}
-				else {
-					print("0.0\t\t");
-				}
-				
-			}
-			print(ls.getRigthSide(i)/div +"\n");
+			print("X "+(i+1 ) + " = "); 
+			printf(ls.getRigthSide(i)/div);
+			print("\n");
 		}
 		
 	}
 	
-////this is for printing perpose
+////this is for printing 
 	public void print(Object o)
 	{
 		System.out.print(o);

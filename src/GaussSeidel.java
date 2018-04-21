@@ -87,7 +87,7 @@ public class GaussSeidel {
 				
 				for(int i=0; i<numberOfEquations; i++)
 				{
-					double ea = (Math.abs(answers[i]-answersold[i]))/answers[i];
+					double ea = Math.abs((answers[i]-answersold[i])/answers[i]);
 					ea*=100;
 					
 					printf(ea);

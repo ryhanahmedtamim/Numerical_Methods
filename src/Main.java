@@ -5,9 +5,11 @@ public class Main {
 		
 		print("For Roots of Equation : 1\n");
 		print("For System of Linear Equations : 2\n");
-		print("For Integration : 3\n");
-		
-		
+		print("For Regression : 3\n");
+		print("For NewtonDivided Differece : 4\n");
+		print("For LagrangeInterpolating Polinomial : 5\n");
+		print("For Integration : 6\n");
+				
 		Scanner sc = new Scanner(System.in);
 		int x;
 		x=sc.nextInt();
@@ -26,8 +28,7 @@ public class Main {
 				double m = sc.nextDouble();
 				print("Enter the value of Velocity :");
 				double v = sc.nextDouble();
-				Function1 f = new Function1(m,v);
-				
+				Function1 f = new Function1(m,v);				
 				print("Enter the value of lower guess xl :");
 				double xl = sc.nextDouble();
 				print("Enter the value of upper guess xu :");
@@ -46,17 +47,14 @@ public class Main {
 			{
 				print("Enter The value of x0 : ");
 				double c = sc.nextDouble();
-				Function2  f = new Function2();
-				
+				Function2  f = new Function2();				
 				print("Enter the value of Maxmum iteration :");
 				int it = sc.nextInt();
 				print("Enter the True value :");
 				double tr = sc.nextDouble();
 				print("Enter the value maximum error:");
-				double es = sc.nextDouble();
-				
+				double es = sc.nextDouble();				
 				FixedPointIteration fx = new FixedPointIteration(c,es,it,f,tr);
-
 				fx.getRoot();	
 			}
 			else
@@ -117,7 +115,51 @@ public class Main {
 				
 				gaussJordanElimination.getSolution();
 			}
-		}	
+		}
+		else if(x == 3)
+		{
+			//new DrawLine();
+			
+			
+			print("Enter The Number of Data Points :");
+			int n = sc.nextInt();
+			Problem problem = new Problem(n);
+			
+			Regression regression = new Regression(problem);
+			
+			regression.solve();		
+			
+		}
+		else if(x==4) 
+		{
+			print("Give the number of points: ");
+			  int n = sc.nextInt();
+		      Points points = new Points(n);
+		      NewtonDividedDifferenceInterpolation nddi = new NewtonDividedDifferenceInterpolation(points);
+		      nddi.getSolution();
+		}
+		else if(x == 5)
+		{
+			print("Give the number of points: ");
+	  	  	int n = sc.nextInt();
+	        Points points = new Points(n);
+	        LagrangesInterpolation li = new LagrangesInterpolation(points);
+	        li.getSolution();
+		}
+		else if (x == 6) 
+		{
+			int iter;
+			double a,b,es;
+			print("Give the lower limit: ");
+			a = sc.nextDouble();
+			print("Give the upper limit: ");
+			b = sc.nextDouble();
+			print("Enter the maximum iteration :");
+			iter = sc.nextInt();
+			//print("Enter the maximum error (%) :");
+			//es = sc.nextDouble();
+			new Ramberg(a,b,iter,0);
+		}
 		
 
 	}
